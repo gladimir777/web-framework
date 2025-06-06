@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "dist/js-web-framwork.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c",
+    "prepack": "npm un build"
   },
   "files": [
     "dist/js-web-framwork.js"
