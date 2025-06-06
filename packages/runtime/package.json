@@ -1,0 +1,20 @@
+{
+  "name": "js-web-framwork",
+  "version": "1.0.0",
+  "main": "dist/js-web-framwork.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "dist/js-web-framwork.js"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "rollup": "^4.42.0",
+    "rollup-plugin-cleanup": "^3.2.1",
+    "rollup-plugin-filesize": "^10.0.0"
+  }
+}

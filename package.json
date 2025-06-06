@@ -1,0 +1,15 @@
+{
+  "name": "js-web-framwork",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private":true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+     "serve:examples": "npx http-server . -o ./examples/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description ": " A project to learn how to writ e a frontend framework",
+  " workspaces ": ["packages/runtime "]
+}
