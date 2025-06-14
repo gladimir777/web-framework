@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="module" src="./todos.js"></script>
@@ -8,12 +11,16 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>My todos</h1>
-    <div class="todo-form">
-      <label for="todo-input">New Todo</label>
-      <input type="text" id="todo-input" />
-      <button id="add-todo-input" disabled>Add</button>
+    <div class="todo-list-container">
+      <div class="todo-form">
+        <h1>My todos</h1>
+        <div>
+          <label for="todo-input">New Todo</label>
+          <input type="text" id="todo-input" />
+          <button id="add-btn" disabled>Add</button>
+        </div>
+        <ul id="todos-list"></ul>
+      </div>
     </div>
-    <ul id="todos-list"></ul>
   </body>
 </html>
