@@ -29,7 +29,7 @@ label {
   margin-bottom: 2rem;
 }
 
-#add-btn {
+.todo-btn {
   background: #007bff;
   border: none;
   color: white;
@@ -40,7 +40,7 @@ label {
   transition: color 0.2s ease;
 }
 
-#add-btn:hover {
+.todo-btn:hover {
   color: #0056b3;
   background: none;
 }
