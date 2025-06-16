@@ -6,7 +6,6 @@ const addTodoButton = document.getElementById('add-btn');
 const todoLists = document.getElementById('todos-list');
 
 //Initialize the view
-
 for (const todo of todos) {
   todoLists.append(renderTodoInReadMode(todo));
 }
@@ -37,8 +36,25 @@ function renderTodoInReadMode(todo) {
   const span = document.createElement('span');
   const btn = document.createElement('button');
   btn.textContent = 'Done';
-  span.textContent = todo;
+
+  span.addEventListener('dblclick', () => {
+    const index = todos.indexOf(todo);
+    todoLists.replaceChild(
+      renderTodoInEditMode(todo, todoLists.childNodes[index])
+    );
+  });
+
+  btn.addEventListener('click', () => {
+    const index = todos.indexOf(todo);
+    removeTodo(index);
+  });
+
   li.append(span);
   li.append(btn);
+  span.textContent = todo;
   return li;
 }
+
+function renderTodoInEditMode(todo) {}
+
+function removeTodo(index) {}
