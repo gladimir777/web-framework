@@ -34,13 +34,16 @@ function addTodo() {
 function renderTodoInReadMode(todo) {
   const li = document.createElement('li');
   const span = document.createElement('span');
+  span.textContent = todo;
   const btn = document.createElement('button');
   btn.textContent = 'Done';
 
   span.addEventListener('dblclick', () => {
+    console.log('span click');
     const index = todos.indexOf(todo);
     todoLists.replaceChild(
-      renderTodoInEditMode(todo, todoLists.childNodes[index])
+      renderTodoInEditMode(todo),
+      todoLists.childNodes[index]
     );
   });
 
@@ -51,10 +54,21 @@ function renderTodoInReadMode(todo) {
 
   li.append(span);
   li.append(btn);
-  span.textContent = todo;
   return li;
 }
 
-function renderTodoInEditMode(todo) {}
+function renderTodoInEditMode(todo) {
+  const cancelBtn = document.createElement('button');
+  cancelBtn.textContent = 'Cancel';
+  const saveBtn = document.createElement('button');
+  saveBtn.textContent = 'Save';
+
+  const input = document.createElement('input');
+  input.value = todo;
+
+  const li = document.createElement('li');
+  li.append(input, cancelBtn, saveBtn);
+  return li;
+}
 
 function removeTodo(index) {}
