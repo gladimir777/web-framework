@@ -19,9 +19,12 @@
 
 h1,
 label {
-  margin-top: 2rem;
   color: #007bff;
   font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  margin-top: 2rem;
 }
 
 .todo-form h1 {
@@ -54,4 +57,51 @@ label {
   padding-right: 5px;
   border: 1px solid #ccc;
   border-radius: 5px;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+ul li {
+  display: flex;
+  justify-content: space-between;
+}
+
+li span {
+  color: #007bff;
+  font-weight: 600;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+button:disabled {
+  padding: 5px 20px 5px 20px;
+  cursor: not-allowed;
+  background-color: #b0b0b0;
+  color: #f0f0f0;
+  opacity: 0.7;
+}
+
+button {
+  padding: 5px 20px 5px 20px;
+  background-color: #007bff;
+  border: none;
+  font-family: 'Courier New', Courier, monospace;
+  cursor: pointer;
+  font-weight: 600;
+  color: #f0f0f0;
 }
