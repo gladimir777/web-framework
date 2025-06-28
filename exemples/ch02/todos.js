@@ -58,12 +58,27 @@ function renderTodoInReadMode(todo) {
 }
 
 function renderTodoInEditMode(todo) {
-  const cancelBtn = document.createElement('button');
-  cancelBtn.textContent = 'Cancel';
   const saveBtn = document.createElement('button');
   saveBtn.textContent = 'Save';
 
+  saveBtn.addEventListener('click', () => {
+    const idx = todos.indexOf(todo);
+    upddateTodo(idx, todo);
+  });
+
+  const cancelBtn = document.createElement('button');
+  cancelBtn.textContent = 'Cancel';
+
+  cancelBtn.addEventListener('click', () => {
+    const index = todos.indexOf(todo);
+    todoLists.replaceChild(
+      renderTodoInReadMode(todo),
+      todoLists.childNodes[index]
+    );
+  });
+
   const input = document.createElement('input');
+  input.type = 'text';
   input.value = todo;
 
   const li = document.createElement('li');
