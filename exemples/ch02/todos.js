@@ -26,7 +26,10 @@ addTodoButton.addEventListener('click', () => {
 });
 
 function addTodo() {
-  todos.push(addTodoInput.value);
+  const todo = addTodoInput.value;
+  todos.push(todo);
+  todoLists.append(renderTodoInReadMode(todo));
+
   addTodoInput.value = '';
   addTodoButton.disabled = addTodoInput.value.length < 3;
 }
@@ -63,7 +66,7 @@ function renderTodoInEditMode(todo) {
 
   saveBtn.addEventListener('click', () => {
     const idx = todos.indexOf(todo);
-    upddateTodo(idx, todo);
+    updateTodo(idx, todo);
   });
 
   const cancelBtn = document.createElement('button');
@@ -87,3 +90,5 @@ function renderTodoInEditMode(todo) {
 }
 
 function removeTodo(index) {}
+
+function updateTodo(idx, todo) {}
