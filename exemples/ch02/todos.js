@@ -42,7 +42,6 @@ function renderTodoInReadMode(todo) {
   btn.textContent = 'Done';
 
   span.addEventListener('dblclick', () => {
-    console.log('span click');
     const index = todos.indexOf(todo);
     todoLists.replaceChild(
       renderTodoInEditMode(todo),
@@ -63,12 +62,6 @@ function renderTodoInReadMode(todo) {
 function renderTodoInEditMode(todo) {
   const saveBtn = document.createElement('button');
   saveBtn.textContent = 'Save';
-
-  saveBtn.addEventListener('click', () => {
-    const idx = todos.indexOf(todo);
-    updateTodo(idx, todo);
-  });
-
   const cancelBtn = document.createElement('button');
   cancelBtn.textContent = 'Cancel';
 
@@ -86,9 +79,25 @@ function renderTodoInEditMode(todo) {
 
   const li = document.createElement('li');
   li.append(input, cancelBtn, saveBtn);
+
+  saveBtn.addEventListener('click', () => {
+    const idx = todos.indexOf(todo);
+    updateTodo(idx, input.value);
+  });
+
   return li;
 }
 
-function removeTodo(index) {}
+function removeTodo(index) {
+  todos.splice(index, 1);
+  todoLists.childNodes[index].remove();
+}
 
-function updateTodo(idx, todo) {}
+function updateTodo(index, desc) {
+  todos[index] = desc;
+  const todo = renderTodoInReadMode(desc);
+  todoLists.replaceChild(
+    renderTodoInReadMode(desc),
+    todoLists.childNodes[index]
+  );
+}
